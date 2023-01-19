@@ -1,0 +1,30 @@
+body {
+  background-image: url("../../assets/whats.jpg");
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(4px);
+  height: 100vh;
+}
+.start {
+  background-color: #00a884;
+  border: #00a884;
+  font-size: 20px;
+}
+.start:hover {
+  background-color: #86e5ff;
+  color: black;
+}
+.titleLogin {
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #86e5ff;
+}
+.logo {
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}

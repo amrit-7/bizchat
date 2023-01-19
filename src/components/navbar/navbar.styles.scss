@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #00afef;
+  margin-bottom: -10px;
+}
+.title {
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 24px;
+  color: #fff;
+  letter-spacing: 1px;
+  background-size: cover;
+  background-image: url("../../assets/giphy.gif");
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logoutButton {
+  background-color: #00afef;
+  outline: none;
+  border: none;
+}
+.logoutButton:hover {
+  background-color: #fff;
+  color: #00afef;
+}
+.logoutButton:active {
+  background-color: #fff;
+  color: #00afef;
+}

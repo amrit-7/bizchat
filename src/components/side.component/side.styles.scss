@@ -1,0 +1,22 @@
+.sideBar {
+  background-image: url("../../assets/backSide.png");
+  backdrop-filter: blur(5px);
+  font-size: 15px;
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  margin-top: 10px;
+}
+.item {
+  width: 150px;
+}
+.tabs {
+  background-color: #ffffff;
+}
+.item:hover {
+  background-color: #00afef;
+  a:hover {
+    color: #000;
+  }
+}

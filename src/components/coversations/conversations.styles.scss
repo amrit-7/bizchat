@@ -1,0 +1,48 @@
+.people-list {
+  background-color: rgba(255, 255, 255, 0.5);
+  img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+}
+.contact-list {
+  background-color: rgba(255, 255, 255, 0.5);
+  img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+  }
+}
+li:hover {
+  background-color: #ffffff;
+}
+li {
+  padding-left: 10px;
+}
+input:focus,
+input.form-control:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.clearfix {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #8b7f6e;
+}
+.people-list .chat-list li.active {
+  background: rgba(62, 145, 246, 0.4);
+}
+.message {
+  font-size: 14px;
+}
+.container {
+  padding-top: 10px;
+  margin-left: 10px;
+  min-height: 80vh;
+}

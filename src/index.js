@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { SWRConfig } from "swr";
+const fetcher = (...args) => fetch(...args).then((response) => response.json());
+const container = document.getElementById("root");
+const root = createRoot(container);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <SWRConfig value={{ fetcher }}>
+      <App />
+    </SWRConfig>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
