@@ -5,13 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { SWRConfig } from "swr";
+import { UserProvider } from "./context/user.context";
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <SWRConfig value={{ fetcher }}>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </SWRConfig>
   </BrowserRouter>
 );

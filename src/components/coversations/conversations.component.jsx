@@ -6,7 +6,8 @@ import "./conversations.styles.scss";
 export default function Conversations() {
   const [conversations, setConversation] = useState([]);
   const [searchField, setSearchField] = useState("");
-  const [filteredConversations, setFilteredConversations]=useState(conversations);
+  const [filteredConversations, setFilteredConversations] =
+    useState(conversations);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")

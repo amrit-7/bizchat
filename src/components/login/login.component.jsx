@@ -1,11 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { Container, Form, Button, Row } from "react-bootstrap";
 import "./login.styles.scss";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as ChatLogo } from "../../assets/chat.svg";
-// import useLocalStorage from "../../hooks/localStorage"
+import { UserContext } from "../../context/user.context";
 
 export default function Login({ setUser }) {
+  const { setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const idRef = useRef();
@@ -13,9 +14,9 @@ export default function Login({ setUser }) {
     e.preventDefault();
     const newUser = e.target.username.value;
     setUser(newUser);
-    localStorage.setItem("user", JSON.stringify(newUser))
-    navigate("/dashboard ");
-
+    setCurrentUser(newUser);
+    localStorage.setItem("user", JSON.stringify(newUser));
+    navigate("/dashboard");
   }
 
   return (

@@ -1,8 +1,17 @@
 import "./navbar.styles.scss";
-import { Outlet } from "react-router-dom";
-import { Fragment } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import { Fragment, useContext } from "react";
 import { Button } from "react-bootstrap";
-const Navbar = ({ signout }) => {
+import { UserContext } from "../../context/user.context";
+const Navbar = () => {
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const navigate = useNavigate();
+  const signout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("user");
+    navigate("/");
+  };
+  // console.log(currentUser);
   return (
     <Fragment>
       <nav className="navbar">
@@ -15,7 +24,7 @@ const Navbar = ({ signout }) => {
             onClick={signout}
             name="logout"
           >
-            Logout
+            Logout {currentUser}
           </Button>
         </div>
       </nav>
