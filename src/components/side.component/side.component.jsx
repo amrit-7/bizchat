@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import { ReactComponent as Add } from "../../assets/add.svg";
 import "./side.styles.scss";
 import Conversations from "../coversations/conversations.component";
-import Contacts from "../contactsTab/contacts.component";
+import Contacts from "../contacts/contacts.component";
 import Contact from "../newContactModal/contact.component";
 
 const converstion = "Convesations";
@@ -19,7 +19,10 @@ export default function Side(user) {
 
   return (
     <Fragment>
-      <div style={{ width: "450px", borderRight:"1px solid grey" }} className="sideBar">
+      <div
+        style={{ width: "450px", borderRight: "1px solid grey" }}
+        className="sideBar"
+      >
         <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
           <Nav
             variant="tabs"
