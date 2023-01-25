@@ -1,7 +1,7 @@
 import Side from "../side.component/side.component";
 import "./dashboard.styles.scss";
 import { Col } from "react-bootstrap";
-import back from "../../assets/idlechat.jpg";
+import back from "../../assets/backchat.png";
 export default function Dashboard(user) {
   return (
     <div className="dashboard">

@@ -6,16 +6,17 @@ import { Form } from "react-bootstrap";
 import EmojiPicker from "emoji-picker-react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
-
+import FileOptions from "../file-upload/file-upload.component";
 export default function MessageBox({ user }) {
   const { userId } = useParams();
   const [message, setMessage] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const [openEmojiBox, setOpenEmojiBox] = useState(false);
-
   const { data, error } = useSWR(
     `https://jsonplaceholder.typicode.com/users?id=${userId}`,
     { suspense: true }
   );
+  const toggleOptions = () => setIsOpen(!isOpen);
   if (error) return console.log(error);
   const name = data[0].name;
   const id = data[0].id;
@@ -62,21 +63,19 @@ export default function MessageBox({ user }) {
           <ChatMsg message={"What about my work?"} time={"19:00"} />
           <ChatMsg message={"How much time it will take?"} time={"19:20"} />
         </div>
-
         <div className="chat-input">
           {openEmojiBox && (
             <EmojiPicker
               onEmojiClick={(emojiObj, event) => {
                 setMessage(message + emojiObj.emoji);
-                // console.log(emojiObj.emoji);
               }}
             />
           )}
-
           <div className="chat-input-btn">
             <InsertEmoticon onClick={() => setOpenEmojiBox(!openEmojiBox)} />
-            <AttachFile />
+            <AttachFile onClick={toggleOptions} /> {isOpen && <FileOptions />}
           </div>
+
           <Form onSubmit={send}>
             <input
               name="messageField"
