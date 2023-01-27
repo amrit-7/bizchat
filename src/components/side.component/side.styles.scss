@@ -1,12 +1,16 @@
 .sideBar {
   background-image: url("../../assets/backSide.png");
   backdrop-filter: blur(5px);
-  font-size: 15px;
+  font-size: 17px;
+  margin-top: 10px;
   a {
     text-decoration: none;
-    color: #000;
+    color: black;
   }
-  margin-top: 10px;
+  .icon,
+  a:hover {
+    color: #00afef;
+  }
 }
 .item {
   width: 150px;
@@ -15,8 +19,5 @@
   background-color: #ffffff;
 }
 .item:hover {
-  background-color: #00afef;
-  a:hover {
-    color: #000;
-  }
+  border-bottom: 5px solid #00afef;
 }

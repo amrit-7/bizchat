@@ -12,14 +12,14 @@
 }
 .chat-message-text {
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 0px;
   p {
     margin-bottom: 5px;
   }
 }
 .chat-message-dt {
-  font-size: 10px;
+  font-size: 13px;
   color: grey;
   font-weight: normal;
   align-self: flex-end;
@@ -33,7 +33,7 @@
   align-items: center;
   padding: 12px;
   background-color: aliceblue;
-  font-size: 14px;
+  font-size: 16px;
 
   .chat-input-btn {
     margin-right: 13px;

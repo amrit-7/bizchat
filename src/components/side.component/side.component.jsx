@@ -36,7 +36,7 @@ export default function Side(user) {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link onClick={() => setModalOpen(true)}>
-                <Add />
+                <Add className="icon" />
               </Nav.Link>
             </Nav.Item>
           </Nav>

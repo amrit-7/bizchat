@@ -1,12 +1,12 @@
 .navbar {
-  background-color: #00afef;
+  background-color: #212529;
   margin-bottom: -10px;
 }
 .title {
   margin-top: 10px;
   font-weight: bolder;
   font-size: 24px;
-  color: #fff;
+  color: #00afef;
   letter-spacing: 1px;
   // background-size: cover;
   // background-image: url("../../assets/giphy.gif");
@@ -14,15 +14,18 @@
   // -webkit-text-fill-color: transparent;
 }
 .logoutButton {
-  background-color: #00afef;
+  background-color: #212529;
   outline: none;
   border: none;
+  color: #00afef;
+  font-size: 18px;
+  margin-right: 20px;
 }
 .logoutButton:hover {
-  background-color: #fff;
-  color: #00afef;
+  background-color: #00afef;
+  color: #fff;
 }
 .logoutButton:active {
   background-color: #fff;
-  color: #00afef;
+  color: #212529;
 }

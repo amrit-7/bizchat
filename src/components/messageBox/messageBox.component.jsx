@@ -76,6 +76,7 @@ export default function MessageBox({ user }) {
         </div>
         <Form onSubmit={send}>
           <input
+            autoFocus
             name="messageField"
             type="text"
             placeholder="Type your Message..."

@@ -15,12 +15,14 @@
   align-items: center;
   height: 55px;
   padding: 5px 0px 5px 10px;
-  background-color: 00afef;
+  background-color: #e3f8ff;
+  backdrop-filter: blur(3px);
   justify-content: space-between;
 }
 .chat-user-info {
   display: flex;
   width: 100%;
+  padding: 3px 0px;
   flex-direction: row;
   align-items: center;
   text-transform: capitalize;
@@ -34,12 +36,12 @@
   line-height: 0.5em;
 }
 .status {
-  font-size: 10px;
+  font-size: 14px;
 }
 .username {
   padding-top: 8px;
-  margin-bottom: 7px;
-  font-size: 15px;
+  margin-bottom: 13px;
+  font-size: 18px;
   font-weight: bold;
 }
 .chat-messages-container {
