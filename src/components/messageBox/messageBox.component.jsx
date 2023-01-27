@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import ChatMsg from "../chatmsg/chatmsg.component";
 import "./messagebox.styles.scss";
 import { InsertEmoticon, AttachFile, Send } from "@mui/icons-material";
@@ -41,57 +41,54 @@ export default function MessageBox({ user }) {
   };
 
   return (
-    <Suspense fallback={<div> Loading </div>}>
-      <div className="message-box-container">
-        <div className="message-box-header">
-          <div className="chat-user-info">
-            <div className="chat-user-img">
-              <img
-                src={`https://api.lorem.space/image/face?w=150&h=150&hash=${id}`}
-                alt="avatar"
-              ></img>
-            </div>
-            <div className="info">
-              <p className="username">{name}</p>
-              <p className="status">Online</p>
-            </div>
+    <div className="message-box-container">
+      <div className="message-box-header">
+        <div className="chat-user-info">
+          <div className="chat-user-img">
+            <img
+              src={`https://api.lorem.space/image/face?w=150&h=150&hash=${id}`}
+              alt="avatar"
+            ></img>
           </div>
-        </div>
-        <div className="chat-messages-container">
-          <ChatMsg message={"Hello"} time={"18:90"} />
-          <ChatMsg message={"How are you?"} time={"18:90"} />
-          <ChatMsg message={"What about my work?"} time={"19:00"} />
-          <ChatMsg message={"How much time it will take?"} time={"19:20"} />
-        </div>
-        <div className="chat-input">
-          {openEmojiBox && (
-            <EmojiPicker
-              onEmojiClick={(emojiObj, event) => {
-                setMessage(message + emojiObj.emoji);
-              }}
-            />
-          )}
-          <div className="chat-input-btn">
-            <InsertEmoticon onClick={() => setOpenEmojiBox(!openEmojiBox)} />
-            <AttachFile onClick={toggleOptions} /> {isOpen && <FileOptions />}
-          </div>
-
-          <Form onSubmit={send}>
-            <input
-              name="messageField"
-              type="text"
-              placeholder="Type your Message..."
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-            />
-          </Form>
-          <div className="chat-input-send-btn" onClick={send}>
-            <Send />
+          <div className="info">
+            <p className="username">{name}</p>
+            <p className="status">Online</p>
           </div>
         </div>
       </div>
-    </Suspense>
+      <div className="chat-messages-container">
+        <ChatMsg message={"Hello"} time={"18:90"} />
+        <ChatMsg message={"How are you?"} time={"18:90"} />
+        <ChatMsg message={"What about my work?"} time={"19:00"} />
+        <ChatMsg message={"How much time it will take?"} time={"19:20"} />
+      </div>
+      <div className="chat-input">
+        {openEmojiBox && (
+          <EmojiPicker
+            onEmojiClick={(emojiObj, event) => {
+              setMessage(message + emojiObj.emoji);
+            }}
+          />
+        )}
+        <div className="chat-input-btn">
+          <InsertEmoticon onClick={() => setOpenEmojiBox(!openEmojiBox)} />
+          <AttachFile onClick={toggleOptions} /> {isOpen && <FileOptions />}
+        </div>
+        <Form onSubmit={send}>
+          <input
+            name="messageField"
+            type="text"
+            placeholder="Type your Message..."
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+          />
+        </Form>
+        <div className="chat-input-send-btn" onClick={send}>
+          <Send />
+        </div>
+      </div>
+    </div>
   );
 }
