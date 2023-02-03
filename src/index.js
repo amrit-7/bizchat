@@ -5,18 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { SWRConfig } from "swr";
-import { UserProvider } from "./context/user.context";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-  <BrowserRouter>
-    <SWRConfig value={{ fetcher }}>
-      <UserProvider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <SWRConfig value={{ fetcher }}>
         <App />
-      </UserProvider>
-    </SWRConfig>
-  </BrowserRouter>
+      </SWRConfig>
+    </BrowserRouter>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
