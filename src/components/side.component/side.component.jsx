@@ -1,4 +1,4 @@
-import { Tab, Nav, Modal } from "react-bootstrap";
+import { Tab, Nav, Modal, Col } from "react-bootstrap";
 import React, { Fragment, useState } from "react";
 import { ReactComponent as Add } from "../../assets/add.svg";
 import "./side.styles.scss";
@@ -19,10 +19,7 @@ export default function Side(user) {
 
   return (
     <Fragment>
-      <div
-        style={{ width: "450px", borderRight: "1px solid grey" }}
-        className="sideBar"
-      >
+      <Col sm={4} style={{ borderRight: "1px solid grey" }} className="sideBar">
         <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
           <Nav
             variant="tabs"
@@ -53,7 +50,7 @@ export default function Side(user) {
         <Modal show={modalOpen} onHide={closeModal}>
           <Contact closeModal={closeModal} />
         </Modal>
-      </div>
+      </Col>
     </Fragment>
   );
 }

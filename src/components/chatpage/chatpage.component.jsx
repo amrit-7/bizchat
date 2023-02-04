@@ -3,11 +3,12 @@ import Side from "../side.component/side.component";
 import "./chatpage.styles.scss";
 import MessageBox from "../messageBox/messageBox.component";
 import { PulseLoader } from "react-spinners";
+import { Container } from "react-bootstrap";
 
 export default function ChatPage({ user }) {
   return (
     <div className="chatpage">
-      <div className="chatpage-container">
+      <Container className="chatpage-container">
         <Side />
         <Suspense
           fallback={
@@ -18,7 +19,7 @@ export default function ChatPage({ user }) {
         >
           <MessageBox user={user} />
         </Suspense>
-      </div>
+      </Container>
     </div>
   );
 }
